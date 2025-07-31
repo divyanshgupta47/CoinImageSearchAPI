@@ -18,8 +18,9 @@ async def search(image: UploadFile = File(...)):
 
     img = Image.open(image_path).convert("RGB")
     embedding = get_image_vector(img)
-    value = search_azure(embedding)
-    return value
+    result = search_azure(embedding)
+    value = "Not found" if result is None or len(result) == 0 else result
+    return value[0].get("description", "No description")
 
 @app.get("/test")
 async def test():
