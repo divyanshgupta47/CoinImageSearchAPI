@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-multipart
+Pillow
+numpy
+torch
+clip-anytorch
+azure-search-documents
