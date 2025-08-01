@@ -2,7 +2,8 @@ fastapi
 uvicorn
 python-multipart
 Pillow
-numpy
+numpy<2.3.0
 torch
-clip-anytorch
-azure-search-documents
+requests
+torchvision
+streamlit
