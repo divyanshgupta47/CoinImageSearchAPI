@@ -23,4 +23,4 @@ async def search(image: UploadFile = File(...)):
 
 @app.get("/test")
 async def test():
-    return "ok"
+    return "API is running successfully"
