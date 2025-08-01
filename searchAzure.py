@@ -3,7 +3,6 @@ import requests
 import torch
 from torchvision import models, transforms
 from PIL import Image
-import io
 
 # --- Azure Search config ---
 endpoint = "https://stockaissearchbasic.search.windows.net"
