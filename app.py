@@ -1,6 +1,5 @@
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
-from indexer import search_by_image
 from searchAzure import get_image_vector, search_azure
 from PIL import Image
 import tempfile
