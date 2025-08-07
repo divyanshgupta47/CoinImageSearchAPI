@@ -15,14 +15,14 @@ class ImageBase64Request(BaseModel):
 async def search(request: ImageBase64Request):
     try:
         # Decode base64 string to bytes
-        #image_data = base64.b64decode(request.image_base64)
-        #image = Image.open(io.BytesIO(image_data)).convert("RGB")
+        image_data = base64.b64decode(request.image_base64)
+        image = Image.open(io.BytesIO(image_data)).convert("RGB")
 
         # Generate embedding and search
-        #embedding = get_image_vector(image)
-        #result = search_azure(embedding)
-        #value = "Not found" if result is None or len(result) == 0 else result
-        return request.image_base64
+        embedding = get_image_vector(image)
+        result = search_azure(embedding)
+        value = "Not found" if result is None or len(result) == 0 else result
+        return {"result": value[0].get("description", "No description")}
 
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Invalid image input. Error: {str(e)}")
