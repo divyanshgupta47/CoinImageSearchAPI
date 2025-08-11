@@ -5,9 +5,9 @@ from torchvision import models, transforms
 from PIL import Image
 
 # --- Azure Search config ---
-endpoint = "https://stockaissearchbasic.search.windows.net"
+endpoint = "https://coin-search-service.search.windows.net"
 index_name = "images-index"
-api_key = "De209qaEogESGPGOVtkS8jdsT2VeUJXfw0h8p4YEE5AzSeAixLgZ"  # Replace with your actual key
+api_key = "stVU6SULnqFQU5a5QB0rxbUJnS36pxy8gTc2eJGH93AzSeD7jVTv"  # Replace with your actual key
 api_version = "2023-11-01"
 
 headers = {
@@ -89,3 +89,4 @@ if uploaded_file:
                 st.warning(f"Unexpected result format: {result}")
     else:
         st.info("❌ No similar images found.")
+
